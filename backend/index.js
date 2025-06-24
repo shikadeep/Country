@@ -12,7 +12,11 @@ const DistrictRouter = require('./Routes/DistrictRoutes')
 require('./Models/db');
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://country-1-0uh4.onrender.com",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+}));
 app.use(express.json());
 
 //Routes
